@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 if(!pressed){
                     button.setBackgroundResource(R.drawable.buttonstylepressed);
-                    button.setText("СТОП");
+                    button.setText("ОТКЛЮЧИТЬ");
                     pressed = true;
                 } else {
                     button.setBackgroundResource(R.drawable.button_style);

@@ -8,14 +8,14 @@
 
     <Button
         android:id="@+id/startbutton"
-        android:layout_width="158dp"
-        android:layout_height="61dp"
+        android:layout_width="173dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="182dp"
         android:background="@drawable/button_style"
         android:fontFamily="@font/comfortaa_light"
         android:text="СТАРТ"
         android:textColor="#FFFFFF"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
