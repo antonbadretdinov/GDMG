@@ -2,6 +2,7 @@ package ru.company.gdmg.ui.home;
 
 import android.app.TimePickerDialog;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -36,53 +38,41 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
-    int hourNow;
-    int minuteNow;
-    int dateNow;
     private boolean pressed = false;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        TextView tvHourNow = view.findViewById(R.id.hour);
-//        TextView tvMinuteNow = view.findViewById(R.id.minute);
-//
-//
-//        Date currentDate = new Date();
-//        DateFormat timeFormatH = new SimpleDateFormat("HH", Locale.getDefault());
-//        DateFormat timeFormatM = new SimpleDateFormat("mm", Locale.getDefault());
-//
-//
-//        String timeH = timeFormatH.format(currentDate);
-//        String timeM = timeFormatM.format(currentDate);
-//        tvHourNow.setText(timeH);
-//        tvMinuteNow.setText(timeM);
+
+        int hour;
+        int minute;
+        int date;
+        final TextView tv = view.findViewById(R.id.textView9);
+        final TimePicker timePicker = view.findViewById(R.id.tp);
+        timePicker.setIs24HourView(true);
+
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker timePicker, int hour, int minute) {
+
+                tv.setText("Ваш будильник будет установлен на "+hour+" : "+minute);
+            }
+        });
 
         final Button button = view.findViewById(R.id.startbutton);
         button.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
-//                TimePickerDialog timePickerDialog = new TimePickerDialog(
-//                        MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
-//                    @Override
-//                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
-//                        hour = hourOfDay;
-//                        minute = minute;
-//                        Calendar calendar = Calendar.getInstance();
-//                        calendar.set(0,0,0,hour,minute);
-//
-//                    }
-//                },12,0,false
-//                );
-
-
 
 
                 if(!pressed){
-
+                    tv.setText("Ваш будильник установлен на " +timePicker.getHour()+" : "+timePicker.getMinute());
+                    timePicker.setVisibility(View.INVISIBLE);
                     button.setBackgroundResource(R.drawable.buttonstylepressed);
                     button.setText("ОТКЛЮЧИТЬ");
                     pressed = true;
                 } else {
+                    timePicker.setVisibility(View.VISIBLE);
                     button.setBackgroundResource(R.drawable.button_style);
                     button.setText("СТАРТ");
                     pressed = false;
