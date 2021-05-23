@@ -7,7 +7,7 @@
     tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/backfortxt"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginBottom="240dp"
@@ -15,8 +15,10 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/tp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tp" />
+        app:layout_constraintTop_toTopOf="@+id/tp"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TimePicker
         android:id="@+id/tp"
@@ -73,5 +75,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_end="102dp" />
+
+    <TextView
+        android:id="@+id/hideTime"
+        android:layout_width="337dp"
+        android:layout_height="92dp"
+        android:fontFamily="sans-serif"
+        android:text="8:37"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="@+id/backfortxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/backfortxt"
+        app:layout_constraintTop_toTopOf="@+id/backfortxt"
+        app:layout_constraintVertical_bias="0.505" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
