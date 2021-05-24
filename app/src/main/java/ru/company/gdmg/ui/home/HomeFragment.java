@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment {
 
         int hour;
         int minute;
-        int date;
+
 
         final TextView backText = view.findViewById(R.id.backfortxt);
         final TextView hideText = view.findViewById(R.id.hideTime);
