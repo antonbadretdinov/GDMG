@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MusicList">
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="23dp"
+        android:background="@drawable/ic_next_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/comfortaa_light"
+            android:lineSpacingExtra="4sp"
+            android:text="Выберите жанр музыки для вашего будильника :"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/main" />
+
+        <CheckBox
+            android:id="@+id/hip"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/UltraLight"
+            android:checked="false"
+            android:fontFamily="@font/comfortaa_light"
+            android:text="Хип-хоп"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/dzhaz"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/UltraLight"
+            android:checked="false"
+            android:fontFamily="@font/comfortaa_light"
+            android:text="Джаз"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/techno"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/UltraLight"
+            android:checked="false"
+            android:fontFamily="@font/comfortaa_light"
+            android:text="Техно"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/rock"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/UltraLight"
+            android:checked="false"
+            android:fontFamily="@font/comfortaa_light"
+            android:text="Рок"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/dubstep"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/UltraLight"
+            android:checked="false"
+            android:fontFamily="@font/comfortaa_light"
+            android:text="Дабстеп"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/rhyme"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/UltraLight"
+            android:checked="false"
+            android:fontFamily="@font/comfortaa_light"
+            android:text="Ритм-энд-Блюз"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/country"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/UltraLight"
+            android:checked="false"
+            android:fontFamily="@font/comfortaa_light"
+            android:text="Кантри"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/indy"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/UltraLight"
+            android:checked="false"
+            android:fontFamily="@font/comfortaa_light"
+            android:text="Инди-рок"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/pop"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/UltraLight"
+            android:checked="false"
+            android:fontFamily="@font/comfortaa_light"
+            android:text="Поп"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/latin"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/UltraLight"
+            android:checked="false"
+            android:fontFamily="@font/comfortaa_light"
+            android:text="Латиноамериканская"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/russian"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/UltraLight"
+            android:checked="false"
+            android:fontFamily="@font/comfortaa_light"
+            android:text="Народная"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
