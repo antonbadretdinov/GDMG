@@ -32,6 +32,7 @@
             </intent-filter>
         </activity>
 
+        <receiver android:name=".AlarmReciever"/>
 
         <meta-data
             android:name="preloaded_fonts"

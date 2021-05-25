@@ -1,5 +1,9 @@
 package ru.company.gdmg.ui.home;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,9 +18,13 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import java.util.Calendar;
+
+import ru.company.gdmg.AlarmReciever;
 import ru.company.gdmg.R;
 
 public class HomeFragment extends Fragment {
+
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -32,8 +40,12 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        final Calendar calendar = Calendar.getInstance();
+        final AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
         int hour;
         int minute;
+
+        final Intent intent = new Intent(getContext(), AlarmReciever.class);
 
 
         final TextView backText = view.findViewById(R.id.backfortxt);
@@ -41,6 +53,8 @@ public class HomeFragment extends Fragment {
         hideText.setVisibility(View.INVISIBLE);
         final TextView tv = view.findViewById(R.id.textView9);
         final TimePicker timePicker = view.findViewById(R.id.tp);
+
+
         timePicker.setIs24HourView(true);
         hideText.setText(timePicker.getHour()+":"+timePicker.getMinute());
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
@@ -77,6 +91,10 @@ public class HomeFragment extends Fragment {
                     tv.setText("Ваш будильник установлен на ");
                     button.setBackgroundResource(R.drawable.buttonstylepressed);
                     button.setText("ОТКЛЮЧИТЬ");
+
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+                    alarmManager.set(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
+
                     pressed = true;
                 } else {
                     backText.setBackgroundColor(getResources().getColor(R.color.main));
