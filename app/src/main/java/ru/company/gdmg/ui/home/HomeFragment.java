@@ -40,12 +40,10 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        final Calendar calendar = Calendar.getInstance();
         final AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
-        int hour;
-        int minute;
+        final int hour;
+        final int minute;
 
-        final Intent intent = new Intent(getContext(), AlarmReciever.class);
 
 
         final TextView backText = view.findViewById(R.id.backfortxt);
@@ -73,25 +71,26 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        hour = timePicker.getHour();
-        minute = timePicker.getMinute();
-
 
         final Button button = view.findViewById(R.id.startbutton);
         button.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
-
-
                 if(!pressed){
+
                     backText.setBackgroundColor(getResources().getColor(R.color.buttonPressed));
                     timePicker.setVisibility(View.INVISIBLE);
                     hideText.setVisibility(View.VISIBLE);
                     tv.setText("Ваш будильник установлен на ");
                     button.setBackgroundResource(R.drawable.buttonstylepressed);
                     button.setText("ОТКЛЮЧИТЬ");
-
+                    Intent intent = new Intent(getContext(), AlarmReciever.class);
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.set(Calendar.SECOND, 0);
+                    calendar.setTimeInMillis(System.currentTimeMillis());
+                    calendar.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
+                    calendar.set(Calendar.MINUTE, timePicker.getMinute());
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
                     alarmManager.set(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
 

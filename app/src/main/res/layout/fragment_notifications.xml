@@ -107,7 +107,7 @@
         app:layout_constraintTop_toBottomOf="@+id/vibr_seekBar" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/changeInMusicBtn"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="5dp"
@@ -130,10 +130,10 @@
         android:src="@drawable/ic_spotify_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/changeInMusicBtn" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -153,7 +153,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -170,11 +170,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <ImageButton
 
-        android:id="@+id/imageButton"
+        android:id="@+id/enter"
         android:layout_width="216dp"
         android:layout_height="30dp"
         android:layout_marginTop="22dp"
@@ -183,6 +183,6 @@
         android:src="@drawable/ic_spotify_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
